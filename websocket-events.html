@@ -1,29 +1,36 @@
 <script type="text/javascript">
-    RED.nodes.registerType('websocket-events', {
-        category: 'network',
-        color: '#9999ff',
-        defaults: {
-            name: { value: "" },
-            websocketConfig: { value:"", type: "websocket-events" },
-        },
-        inputs: 1,
-        outputs: 2,
-        icon: "file.png",
-        label: function() {
-            return this.name || "websocket-events";
-        },
-        oneditprepare: function() {
-        },
-    });
+  RED.nodes.registerType('websocket-events', {
+    category: 'network',
+    color: '#9999ff',
+    defaults: {
+      name: { value: "" },
+      websocketConfig: { value:"", type: "websocket-listener" }
+    },
+    inputs: 1,
+    outputs: 2,
+    icon: "file.png",
+    outputLabels: function(i) {
+      return (i == 0) ? "opened" : "closed";
+    },
+    label: function () {
+      return this.name || "websocket-events";
+    },
+    oneditprepare: function () {
+    },
+  });
 </script>
 
-<script type="text/x-red" data-template-name="websocket-events">
+<script type="text/html" data-template-name="websocket-events">
   <div class="form-row">
-    <label for="node-input-websocketConfig"><i class="fa fa-cog"></i> Websocket</label>
-    <input type="text" id="node-input-websocketConfig">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-websocketConfig"><i class="icon-tag"></i> Websocket</label>
+    <input type="text" id="node-input-websocketConfig" placeholder="Websocket">
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="websocket-events">
-<p>Here is some stuff.</p>
+<script type="text/html" data-help-name="websocket-events">
+  <p>Here is some stuff.</p>
 </script>

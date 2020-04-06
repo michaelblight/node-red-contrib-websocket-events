@@ -23,7 +23,7 @@
   "dependencies": {},
   "node-red": {
     "nodes": {
-      "websocket-listener": "websocket-events.js"
+      "websocket-events": "websocket-events.js"
     }
   }
 }

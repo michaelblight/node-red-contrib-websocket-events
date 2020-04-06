@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType('websocket-events', {
+        category: 'network',
+        color: '#9999ff',
+        defaults: {
+            name: { value: "" },
+            websocketConfig: { value:"", type: "websocket-events" },
+        },
+        inputs: 1,
+        outputs: 2,
+        icon: "file.png",
+        label: function() {
+            return this.name || "websocket-events";
+        },
+        oneditprepare: function() {
+        },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="websocket-events">
+  <div class="form-row">
+    <label for="node-input-websocketConfig"><i class="fa fa-cog"></i> Websocket</label>
+    <input type="text" id="node-input-websocketConfig">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="websocket-events">
+<p>Here is some stuff.</p>
+</script>
